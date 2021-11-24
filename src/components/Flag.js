@@ -1,10 +1,10 @@
 import React from "react";
-import {Text, View, StyleSheet} from 'react-native';
+import { View, StyleSheet} from 'react-native';
 
 export default props => {
     return (
         <View style={styles.container}>
-            <View style={[styles.flagpole, props.bigger ? styles.flaggedpoleBigger: null]}></View>
+            <View style={[styles.flagpole, props.bigger ? styles.flagpoleBigger: null]}></View>
             <View style={[styles.flag, props.bigger ? styles.flagBigger: null]}></View>
             <View style={[styles.base1, props.bigger ? styles.base1Bigger: null]}></View>
             <View style={[styles.base2, props.bigger ? styles.base2Bigger: null ]}></View>
@@ -47,7 +47,7 @@ const styles =StyleSheet.create({
         marginLeft: 5,
         marginTop: 12,
     },
-    flaggedpoleBigger:{
+    flagpoleBigger:{
         heigth: 28,
         width: 4,
         marginLeft: 16,
@@ -66,8 +66,8 @@ const styles =StyleSheet.create({
     base2Bigger:{
         height:4,
         width:20,
-        marginTop: 8,
-        marginLeft:24,
+        marginTop: 24,
+        marginLeft:8,
     }
 
 
