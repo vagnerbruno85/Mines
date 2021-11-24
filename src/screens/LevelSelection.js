@@ -28,10 +28,9 @@ export default props => {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={[styles.button, styles.bgHard]}
-                        onPress={() => props.onLevelSelected(0.1)}>
+                        onPress={() => props.onLevelSelected(0.3)}>
                         <Text style={styles.buttonLabel}>Difícil</Text>
                     </TouchableOpacity>
-
                 </View>
             </View>
         </Modal>
@@ -44,6 +43,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor:'rgba(0,0,0,0.6)',
+        borderRadius:20,
     },
     container:{
         backgroundColor:'#EEE',
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         padding: 5,
     },
-    bottonLabel:{
+    buttonLabel:{
         fontSize:20, 
         color: '#EEE',
         fontWeigth: 'bold',

@@ -4,13 +4,11 @@ import {
   Text,
   View,
   Alert,
-
 } from 'react-native';
 
 import Header from './src/components/Header';
 
 import params from './src/params';
-import Field from './src/components/Field';
 import MineField from './src/components/MineField';
 import { 
   createMinedBoard,
@@ -56,7 +54,7 @@ export default class App extends Component {
 
     if (lost) {
       showMines(board)
-      Alert.alert('Perdeeeeeeeu!', 'Que buuuuuuurro')
+      Alert.alert('Perdeeeeeeeu!', 'Tente outra vez!')
     }
 
     if (won) {
@@ -89,7 +87,8 @@ export default class App extends Component {
           onCancel={() => this.setState({ showLevelSelection: false })}/>
         <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
           onNewGame={() => this.setState(this.createState())}
-          onFlagPress={() => this.setState({showLevelSelection:true})}/>
+          onFlagPress={() => this.setState({showLevelSelection:true})}
+          />
         <Text style={styles.welcome}> Iniciando o Mines !</Text>
         <Text style={styles.instructions}> Tamanho da grade :
           {params.getRowsAmount()}X{params.getColumnsAmount()}
@@ -99,24 +98,8 @@ export default class App extends Component {
             onOpenField={this.onOpenField} 
             onSelectField={this.onSelectField}/>
         </View>
-          
-{/*         
-        <Field />
-        <Field opened />
-        <Field opened nearMines={1} />
-        <Field opened nearMines={2} />
-        <Field opened nearMines={3} />
-        <Field opened nearMines={4} />
-        <Field opened nearMines={5} />
-        <Field opened nearMines={6} />
-        <Field mined />
-        <Field mined opened />
-        <Field mined opened exploded />
-        <Field flagged opened /> */}
-
       </View>
-    );
-    
+    );  
   }
 }
 
@@ -127,9 +110,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent:'flex-end',
     alignItems: 'center',
-    backgroundColor: '#F5fcff'
+    // backgroundColor: '#F5fcff',
+    backgroundColor: 'red'
   },
   board:{
+    flex: 1,
     alignItems:'center',
     backgroundColor:'#AAA'
   },

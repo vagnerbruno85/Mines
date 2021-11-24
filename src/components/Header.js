@@ -6,7 +6,8 @@ export default props => {
     return (
         <View style={styles.container}>
             <View style={styles.flagContainer}>
-                <TouchableOpacity onPress={onFlagPress}
+                <TouchableOpacity 
+                onPress={props.onFlagPress}
                 style={styles.flagButton}>
                    <Flag bigger/> 
                 </TouchableOpacity>
@@ -20,10 +21,10 @@ export default props => {
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#FFF',
+        backgroundColor: '#EEE',
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingTop: 20,
@@ -32,9 +33,9 @@ const styles = StyleSheet.create({
     flagContainer: {
         flexDirection: 'row',
     },
-    flagButton:{
+    flagButton: {
         marginTop:10,
-        minWidth: 30
+        minWidth: 30,
     },
     flagsLeft: {
         fontSize:30,
