@@ -4,12 +4,11 @@ import Flag from "./Flag";
 
 export default props => {
     return (
-        <View style={StyleSheet.container}>
-            <View style={StyleSheet.flagContainer}>
+        <View style={styles.container}>
+            <View style={styles.flagContainer}>
                 <TouchableOpacity onPress={onFlagPress}
-                style={StyleSheet.flagButton}>
+                style={styles.flagButton}>
                    <Flag bigger/> 
-                    
                 </TouchableOpacity>
                 <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
             </View>

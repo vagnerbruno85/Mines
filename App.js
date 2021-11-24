@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React,{Component} from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,10 +7,7 @@ import {
 
 } from 'react-native';
 
-import {
-  Colors,
-  Header,
-} from 'react-native/Libraries/NewAppScreen';
+import Header from './src/components/Header';
 
 import params from './src/params';
 import Field from './src/components/Field';
@@ -69,7 +65,7 @@ export default class App extends Component {
 
     this.setState({ board, lost, won })
   }
-  onSelectField = (row, column => {
+  onSelectField = (row, column) => {
     const board = cloneBoard(this.state.board)
     invertFlag(board, row, column)
     const won = wonGame(board)
@@ -78,7 +74,7 @@ export default class App extends Component {
       Alert.alert('Parabéns', 'Você ganhou!')
     }
     this.setState({ board, won})
-  })
+  }
 
   onLevelSelected = level => {
     params.difficultLevel = level
@@ -87,39 +83,38 @@ export default class App extends Component {
 
   render () {
     return (
-    
-          <View style={styles.container}>
-            <LevelSelection isVisible={this.state.showLevelSelection}
-              onLevelSelected={this.onLevelSelected} 
-              onCancel={() => this.setState({ showLevelSelection: false })}/>
-            <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
-              onNewGame={() => this.setState(this.createState())}
-              onFlagPress={() => this.setState({showLevelSelection:true})}/>
-            <Text style={styles.welcome}> Iniciando o Mines !</Text>
-            <Text style={styles.instructions}> Tamanho da grade :
-              {params.getRowsAmount()}X{params.getColumnsAmount()}
-            </Text>
-            <View style={styles.board}>
-              <MineField board={this.state.board}
-               onOpenField={this.onOpenField} 
-               onSelectField={this.onSelectField}/>
-            </View>
-             
-           
-            {/* <Field />
-            <Field opened />
-            <Field opened nearMines={1} />
-            <Field opened nearMines={2} />
-            <Field opened nearMines={3} />
-            <Field opened nearMines={4} />
-            <Field opened nearMines={5} />
-            <Field opened nearMines={6} />
-            <Field mined />
-            <Field mined opened />
-            <Field mined opened exploded />
-            <Field flagged opened /> */}
+      <View style={styles.container}>
+        <LevelSelection isVisible={this.state.showLevelSelection}
+          onLevelSelected={this.onLevelSelected} 
+          onCancel={() => this.setState({ showLevelSelection: false })}/>
+        <Header flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
+          onNewGame={() => this.setState(this.createState())}
+          onFlagPress={() => this.setState({showLevelSelection:true})}/>
+        <Text style={styles.welcome}> Iniciando o Mines !</Text>
+        <Text style={styles.instructions}> Tamanho da grade :
+          {params.getRowsAmount()}X{params.getColumnsAmount()}
+        </Text>
+        <View style={styles.board}>
+          <MineField board={this.state.board}
+            onOpenField={this.onOpenField} 
+            onSelectField={this.onSelectField}/>
+        </View>
+          
+{/*         
+        <Field />
+        <Field opened />
+        <Field opened nearMines={1} />
+        <Field opened nearMines={2} />
+        <Field opened nearMines={3} />
+        <Field opened nearMines={4} />
+        <Field opened nearMines={5} />
+        <Field opened nearMines={6} />
+        <Field mined />
+        <Field mined opened />
+        <Field mined opened exploded />
+        <Field flagged opened /> */}
 
-          </View>
+      </View>
     );
     
   }
@@ -131,6 +126,8 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent:'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#F5fcff'
   },
   board:{
     alignItems:'center',
@@ -149,4 +146,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default App;
+// export default App;

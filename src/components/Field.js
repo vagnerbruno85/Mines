@@ -7,7 +7,7 @@ import Flag from "./Flag";
 export default props => {
     const { mined, opened, nearMines, exploded, flagged } = props
 
-    const styleField = [style.field]
+    const styleField = [styles.field]
     if (opened) styleField.push(styles.opened)
     if (exploded) styleField.push(styles.exploded)
     if (flagged) styleField.push(styles.flagged)

@@ -1,4 +1,4 @@
-import {Dimensions} from 'react-native'
+import {Dimensions} from 'react-native';
 
 const params = {
     blockSize: 30,
@@ -15,6 +15,6 @@ const params = {
         const boardHeigth = totalHeigth * (1 - this.headerRatio)
         return Math.floor(boardHeigth / this.blockSize )
     }
-}
+} 
 
 export default params
