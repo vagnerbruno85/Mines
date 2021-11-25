@@ -109,26 +109,11 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent:'flex-end',
-    alignItems: 'center',
-    // backgroundColor: '#F5fcff',
-    backgroundColor: 'red'
+    backgroundColor:'#951365',
   },
   board:{
-    flex: 1,
     alignItems:'center',
     backgroundColor:'#AAA'
-  },
-  welcome:{
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions:{
-    fontSize: 16,
-    textAlign: 'center',
-    margin: 10,
-  },
+  }
 
 });
-
-// export default App;
