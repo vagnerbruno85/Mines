@@ -22,14 +22,14 @@ export default props => {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         flexDirection: 'row',
         backgroundColor: '#EEE',
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingTop: 20,
         paddingHorizontal:20,
-        backgroundColor:'red',
+       
     },
     flagContainer: {
         flexDirection: 'row',
