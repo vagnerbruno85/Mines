@@ -14,8 +14,9 @@ export default props => {
                 <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
             </View>
             <TouchableOpacity style={styles.button}
-                onPress={props.onNewGame}
-            ><Text>Novo Jogo</Text></TouchableOpacity>
+                onPress={props.onNewGame}>
+                <Text style={styles.buttonLabel}>Novo Jogo</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
         marginLeft:20,
     },
     button: {
-        backgroundColor: '#999',
+        backgroundColor: '#80A84A',
         padding: 5,
     },
     buttonLabel:{

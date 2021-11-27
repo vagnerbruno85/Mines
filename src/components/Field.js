@@ -45,7 +45,8 @@ const styles = StyleSheet.create ({
     },
     
     regular:{
-        backgroundColor:'#999',
+        // backgroundColor:'#999',
+        backgroundColor:'green',
         borderLeftColor:'#CCC',
         borderTopColor: '#CCC',
         borderRightColor: '#333',
@@ -53,7 +54,8 @@ const styles = StyleSheet.create ({
     },
 
     opened:{
-        backgroundColor:'#999',
+        // backgroundColor:'#999',
+        backgroundColor:"#8FFC4C",
         borderColor: '#777',
         alignItems:'center',
         justifyContent:'center',
