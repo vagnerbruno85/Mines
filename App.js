@@ -90,7 +90,7 @@ export default class App extends Component {
           onFlagPress={() => this.setState({showLevelSelection:true})}
           />
         <Text style={styles.welcome}> Iniciando o Mines !</Text>
-        <Text style={styles.instructions}> Tamanho da grade :
+        <Text style={styles.instructions}> Tamanho da Pasto:
           {params.getRowsAmount()}X{params.getColumnsAmount()}
         </Text>
         <View style={styles.board}>
@@ -109,11 +109,21 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent:'flex-end',
-    backgroundColor:'#951365',
+    backgroundColor:'#BF7E4B',
   },
   board:{
     alignItems:'center',
     backgroundColor:'#AAA'
-  }
+  },
+  welcome:{
+    fontWeight:'bold',
+    fontSize:20,
+    textAlign:'center',
+  },
+  instructions:{
+    fontWeight:'bold',
+    fontSize:15,
+    textAlign:'right',
+  },
 
 });
